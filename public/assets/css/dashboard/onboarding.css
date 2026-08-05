@@ -1,0 +1,718 @@
+/**
+ * CARDOXIS - Onboarding System  RF
+
+/* ============================================================
+   ROOT VARIABLES - Design System
+   ============================================================ */
+:root {
+    /* Cores Principais */
+    --onboarding-primary: #0052CC;
+    --onboarding-primary-hover: #003D99;
+    --onboarding-primary-light: #E6F0FF;
+    --onboarding-primary-dark: #002366;
+    
+    --onboarding-success: #00875A;
+    --onboarding-success-light: #E3FCEF;
+    --onboarding-success-dark: #005035;
+    
+    --onboarding-warning: #FF8B00;
+    --onboarding-warning-light: #FFF4E5;
+    
+    --onboarding-danger: #DE350B;
+    --onboarding-danger-light: #FFEBE6;
+    
+    --onboarding-info: #0052CC;
+    --onboarding-info-light: #E6F0FF;
+    
+    /* Neutras */
+    --onboarding-bg: #F4F5F7;
+    --onboarding-card: #FFFFFF;
+    --onboarding-text: #172B4D;
+    --onboarding-text-secondary: #42526E;
+    --onboarding-text-muted: #6B778C;
+    --onboarding-border: #DFE1E6;
+    --onboarding-border-light: #EBECF0;
+    
+    /* Efeitos */
+    --onboarding-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+    --onboarding-shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.18);
+    --onboarding-radius: 16px;
+    --onboarding-radius-sm: 10px;
+    --onboarding-transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    /* Fontes */
+    --onboarding-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+.onboarding-system * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.onboarding-system {
+    font-family: var(--onboarding-font);
+}
+
+/* ============================================================
+   OVERLAY
+   ============================================================ */
+.onboarding-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(9, 30, 66, 0.65);
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    animation: overlayFadeIn 0.5s ease;
+    padding: 20px;
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+    to {
+        opacity: 1;
+        backdrop-filter: blur(16px);
+    }
+}
+
+/* ============================================================
+   CARD PRINCIPAL
+   ============================================================ */
+.onboarding-card {
+    background: var(--onboarding-card);
+    border-radius: var(--onboarding-radius);
+    padding: 40px 48px;
+    box-shadow: var(--onboarding-shadow);
+    max-width: 560px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: cardSlideUp 0.6s var(--onboarding-transition);
+}
+
+@keyframes cardSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Barra superior gradiente */
+.onboarding-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--onboarding-primary), #4C9AFF, var(--onboarding-primary));
+    background-size: 200% 100%;
+    animation: shimmerGradient 3s ease-in-out infinite;
+    border-radius: var(--onboarding-radius) var(--onboarding-radius) 0 0;
+}
+
+@keyframes shimmerGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Scroll personalizado */
+.onboarding-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.onboarding-card::-webkit-scrollbar-track {
+    background: var(--onboarding-border-light);
+    border-radius: 3px;
+}
+
+.onboarding-card::-webkit-scrollbar-thumb {
+    background: var(--onboarding-primary);
+    border-radius: 3px;
+}
+
+/* ============================================================
+   PROGRESSO
+   ============================================================ */
+.onboarding-progress-wrapper {
+    margin-bottom: 28px;
+}
+
+.onboarding-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.onboarding-progress-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--onboarding-text-secondary);
+}
+
+.onboarding-progress-percentage {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--onboarding-primary);
+}
+
+.onboarding-progress-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--onboarding-border);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.onboarding-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--onboarding-primary), #4C9AFF);
+    border-radius: 3px;
+    transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+}
+
+.onboarding-progress-fill::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: progressShine 2s ease-in-out infinite;
+}
+
+@keyframes progressShine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* ============================================================
+   HEADER DO STEP
+   ============================================================ */
+.onboarding-step-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.onboarding-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 32px;
+    transition: all 0.3s ease;
+}
+
+/* Cores dos ícones */
+.onboarding-icon-wrapper.primary {
+    background: var(--onboarding-primary-light);
+    color: var(--onboarding-primary);
+}
+.onboarding-icon-wrapper.success {
+    background: var(--onboarding-success-light);
+    color: var(--onboarding-success);
+}
+.onboarding-icon-wrapper.warning {
+    background: var(--onboarding-warning-light);
+    color: var(--onboarding-warning);
+}
+.onboarding-icon-wrapper.danger {
+    background: var(--onboarding-danger-light);
+    color: var(--onboarding-danger);
+}
+.onboarding-icon-wrapper.info {
+    background: var(--onboarding-info-light);
+    color: var(--onboarding-info);
+}
+
+.onboarding-step-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--onboarding-text);
+    margin-bottom: 4px;
+}
+
+.onboarding-step-subtitle {
+    font-size: 14px;
+    color: var(--onboarding-text-muted);
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.onboarding-step-description {
+    font-size: 14px;
+    color: var(--onboarding-text-secondary);
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   STEPS LIST
+   ============================================================ */
+.onboarding-steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 28px;
+}
+
+.onboarding-step-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 16px;
+    border-radius: var(--onboarding-radius-sm);
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.onboarding-step-item:hover {
+    background: var(--onboarding-border-light);
+}
+
+.onboarding-step-item.active {
+    background: var(--onboarding-primary-light);
+    border: 1px solid var(--onboarding-primary);
+}
+
+.onboarding-step-item.completed {
+    opacity: 0.7;
+}
+
+.step-indicator {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.step-indicator.pending {
+    background: var(--onboarding-border);
+    color: var(--onboarding-text-muted);
+}
+
+.step-indicator.active {
+    background: var(--onboarding-primary);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 82, 204, 0.3);
+    transform: scale(1.05);
+}
+
+.step-indicator.completed {
+    background: var(--onboarding-success);
+    color: #fff;
+}
+
+.step-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--onboarding-text);
+}
+
+.step-name.completed-text {
+    color: var(--onboarding-text-muted);
+}
+
+.step-status-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.step-status-badge.pending {
+    background: var(--onboarding-border);
+    color: var(--onboarding-text-muted);
+}
+
+.step-status-badge.active {
+    background: var(--onboarding-primary);
+    color: #fff;
+}
+
+.step-status-badge.completed {
+    background: var(--onboarding-success);
+    color: #fff;
+}
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+.onboarding-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.onboarding-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: var(--onboarding-radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    font-family: var(--onboarding-font);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    width: 100%;
+}
+
+.onboarding-btn-primary {
+    background: var(--onboarding-primary);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 82, 204, 0.25);
+}
+
+.onboarding-btn-primary:hover {
+    background: var(--onboarding-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 82, 204, 0.35);
+}
+
+.onboarding-btn-primary:active {
+    transform: translateY(0);
+}
+
+.onboarding-btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.onboarding-btn-success {
+    background: var(--onboarding-success);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 135, 90, 0.25);
+}
+
+.onboarding-btn-success:hover {
+    background: var(--onboarding-success-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 135, 90, 0.35);
+}
+
+.onboarding-btn-secondary {
+    background: var(--onboarding-border-light);
+    color: var(--onboarding-text);
+}
+
+.onboarding-btn-secondary:hover {
+    background: var(--onboarding-border);
+    transform: translateY(-1px);
+}
+
+.onboarding-btn-outline {
+    background: transparent;
+    color: var(--onboarding-primary);
+    border: 2px solid var(--onboarding-primary);
+}
+
+.onboarding-btn-outline:hover {
+    background: var(--onboarding-primary-light);
+    transform: translateY(-1px);
+}
+
+.onboarding-btn-skip {
+    background: transparent;
+    color: var(--onboarding-text-muted);
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.onboarding-btn-skip:hover {
+    color: var(--onboarding-danger);
+    background: var(--onboarding-danger-light);
+    border-radius: var(--onboarding-radius-sm);
+}
+
+/* ============================================================
+   TOAST NOTIFICATION
+   ============================================================ */
+.onboarding-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--onboarding-text);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: var(--onboarding-radius-sm);
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    z-index: 9999999;
+    animation: toastSlideUp 0.4s var(--onboarding-transition);
+    max-width: 90%;
+    text-align: center;
+}
+
+.onboarding-toast.success {
+    background: var(--onboarding-success);
+}
+
+.onboarding-toast.error {
+    background: var(--onboarding-danger);
+}
+
+@keyframes toastSlideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* ============================================================
+   SPOTLIGHT / HIGHLIGHT
+   ============================================================ */
+.onboarding-spotlight {
+    position: fixed;
+    z-index: 999998;
+    pointer-events: none;
+    border-radius: var(--onboarding-radius-sm);
+    box-shadow: 0 0 0 9999px rgba(9, 30, 66, 0.7);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 0;
+    border: 2px solid var(--onboarding-primary);
+}
+
+.onboarding-spotlight.visible {
+    opacity: 1;
+}
+
+.onboarding-spotlight::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: var(--onboarding-radius-sm);
+    border: 2px solid var(--onboarding-primary);
+    animation: spotlightPulse 2s ease-in-out infinite;
+}
+
+@keyframes spotlightPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.02); }
+}
+
+.onboarding-tooltip {
+    position: fixed;
+    z-index: 999999;
+    background: var(--onboarding-card);
+    border-radius: var(--onboarding-radius-sm);
+    padding: 20px 24px;
+    box-shadow: var(--onboarding-shadow-hover);
+    max-width: 360px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: all 0.4s var(--onboarding-transition);
+    pointer-events: auto;
+    border: 1px solid var(--onboarding-border-light);
+}
+
+.onboarding-tooltip.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.onboarding-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-bottom-color: var(--onboarding-card);
+}
+
+.onboarding-tooltip-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--onboarding-text);
+    margin-bottom: 4px;
+}
+
+.onboarding-tooltip-text {
+    font-size: 13px;
+    color: var(--onboarding-text-secondary);
+    line-height: 1.5;
+}
+
+.onboarding-tooltip-hint {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--onboarding-text-muted);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 640px) {
+    .onboarding-card {
+        padding: 28px 20px;
+        margin: 12px;
+    }
+    
+    .onboarding-step-title {
+        font-size: 20px;
+    }
+    
+    .onboarding-icon-wrapper {
+        width: 64px;
+        height: 64px;
+        font-size: 24px;
+    }
+    
+    .onboarding-step-item {
+        padding: 8px 12px;
+        gap: 10px;
+    }
+    
+    .step-indicator {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+    
+    .step-name {
+        font-size: 13px;
+    }
+    
+    .step-status-badge {
+        font-size: 10px;
+        padding: 2px 8px;
+    }
+    
+    .onboarding-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .onboarding-tooltip {
+        max-width: 280px;
+        padding: 16px 18px;
+        margin: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .onboarding-card {
+        padding: 20px 16px;
+    }
+    
+    .onboarding-step-title {
+        font-size: 18px;
+    }
+    
+    .onboarding-step-description {
+        font-size: 13px;
+    }
+}
+
+/* ============================================================
+   WELCOME MODAL ESPECÍFICO
+   ============================================================ */
+.onboarding-welcome-logo {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--onboarding-primary);
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+.onboarding-welcome-logo span {
+    color: var(--onboarding-text);
+}
+
+.onboarding-welcome-badge {
+    display: inline-block;
+    background: var(--onboarding-primary-light);
+    color: var(--onboarding-primary);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+/* ============================================================
+   COMPLETE STEP ESPECÍFICO
+   ============================================================ */
+.onboarding-complete-icon {
+    font-size: 56px;
+    color: var(--onboarding-success);
+    animation: completeBounce 1s ease-in-out infinite;
+}
+
+@keyframes completeBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.onboarding-complete-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.onboarding-complete-stat {
+    background: var(--onboarding-border-light);
+    border-radius: var(--onboarding-radius-sm);
+    padding: 12px;
+    text-align: center;
+}
+
+.onboarding-complete-stat-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--onboarding-text);
+}
+
+.onboarding-complete-stat-label {
+    font-size: 12px;
+    color: var(--onboarding-text-muted);
+}

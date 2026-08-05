@@ -1,0 +1,141 @@
+# ============================================
+# CARDOXIS - .htaccess
+# ============================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /cardoxis/
+    
+    # ============================================
+    # PERMITIR ACESSO DIRETO A ARQUIVOS DE SESSÃO
+    # ============================================
+    RewriteRule ^sync-session\.php$ - [L]
+    RewriteRule ^session-status\.php$ - [L]
+    RewriteRule ^force-sync\.php$ - [L]
+    RewriteRule ^fix-session\.php$ - [L]
+    RewriteRule ^logout\.php$ - [L]
+    RewriteRule ^download\.php$ - [L]
+    
+    # ============================================
+    # PERMITIR ACESSO A RECURSOS ESTÁTICOS
+    # ============================================
+    # Ícones, fontes, imagens, CSS, JS
+    RewriteRule \.(ico|png|jpg|jpeg|gif|webp|svg|css|js|woff|woff2|ttf|eot|otf)$ - [L]
+    
+    # ============================================
+    # REDIRECIONAR RAIZ
+    # ============================================
+    RewriteRule ^$ public/index.php [L]
+    
+    # ============================================
+    # ROTA PARA LOGOUT
+    # ============================================
+    RewriteRule ^logout$ public/logout.php [L]
+    
+    # ============================================
+    # ROTA PARA SYNC-SESSION (API)
+    # ============================================
+    RewriteRule ^api/v1/sync-session$ sync-session.php [L]
+    
+    # ============================================
+    # REDIRECIONAR TODAS AS REQUISIÇÕES (exceto arquivos estáticos)
+    # ============================================
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ public/index.php [L]
+</IfModule>
+
+# ============================================
+# SEGURANÇA
+# ============================================
+
+# Proteger arquivos sensíveis
+<FilesMatch "\.(env|json|config|db|sql|log|ini|yml|yaml|lock|map|htaccess|htpasswd)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Proteger pastas
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# ============================================
+# HEADERS DE SEGURANÇA (CORRIGIDO)
+# ============================================
+<IfModule mod_headers.c>
+    # Proteção contra XSS
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Proteção contra MIME sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Proteção contra clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Política de referer
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # ============================================
+    # CSP CORRIGIDO - Permite todos os recursos necessários
+    # ============================================
+    # Permitir fontes, imagens, ícones, etc.
+    Header set Content-Security-Policy "default-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:;"
+</IfModule>
+
+# ============================================
+# COMPRESSÃO GZIP
+# ============================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json application/xml text/plain
+</IfModule>
+
+# ============================================
+# CACHE DE ARQUIVOS ESTÁTICOS
+# ============================================
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/font-ttf "access plus 1 year"
+    ExpiresByType application/font-eot "access plus 1 year"
+    ExpiresByType application/font-otf "access plus 1 year"
+</IfModule>
+
+# ============================================
+# PREVENÇÃO DE HOTLINKING (CORRIGIDO)
+# ============================================
+# Removido para não bloquear ícones e imagens de fontes externas
+# <IfModule mod_rewrite.c>
+#     RewriteCond %{HTTP_REFERER} !^$
+#     RewriteCond %{HTTP_REFERER} !^https?://(www\.)?cardoxis\.io/ [NC]
+#     RewriteCond %{HTTP_REFERER} !^https?://(www\.)?localhost/ [NC]
+#     RewriteRule \.(jpg|jpeg|png|gif|webp|svg|pdf)$ - [F]
+# </IfModule>
+
+# ============================================
+# CONFIGURAÇÃO DE ERROS
+# ============================================
+# ErrorDocument 404 /public/404.html
+# ErrorDocument 403 /public/403.html
+# ErrorDocument 500 /public/500.html
+
+# ============================================
+# TIPOS MIME PARA FONTES E ÍCONES
+# ============================================
+<IfModule mod_mime.c>
+    AddType application/font-woff .woff
+    AddType application/font-woff2 .woff2
+    AddType application/font-ttf .ttf
+    AddType application/font-eot .eot
+    AddType application/font-otf .otf
+    AddType image/svg+xml .svg
+    AddType image/x-icon .ico
+</IfModule>

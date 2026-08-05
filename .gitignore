@@ -1,0 +1,43 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Configurações do ambiente
+.env
+.env.local
+.env.*.local
+
+# Dependências
+node_modules/
+vendor/
+composer.lock
+
+# IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Cache e logs
+storage/logs/
+storage/cache/
+storage/uploads/temp/
+*.cache
+
+# Banco de dados
+*.sqlite
+*.sqlite3
+database.sql
+
+# Arquivos de sistema do Windows
+desktop.ini
+
+# Arquivos de sistema do Mac
+.AppleDouble
+.LSOverride
+
+# Pasta de uploads (mantém estrutura)
+storage/uploads/*
+!storage/uploads/.gitkeep

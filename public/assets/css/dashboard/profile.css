@@ -1,0 +1,1937 @@
+/**
+ * ============================================================
+ * CARDOXIS - PERFIL CSS  RF
+ * ============================================================
+ */
+
+/* ============================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   ============================================ */
+:root {
+    /* Cores Principais - Profile */
+    --profile-primary: #2563eb;
+    --profile-primary-dark: #1d4ed8;
+    --profile-primary-light: #dbeafe;
+    --profile-primary-ultra-light: #eff6ff;
+    --profile-primary-rgb: 37, 99, 235;
+    
+    /* Cores de Status */
+    --profile-success: #059669;
+    --profile-success-light: #d1fae5;
+    --profile-success-ultra-light: #ecfdf5;
+    --profile-warning: #d97706;
+    --profile-warning-light: #fef3c7;
+    --profile-warning-ultra-light: #fffbeb;
+    --profile-danger: #dc2626;
+    --profile-danger-light: #fee2e2;
+    --profile-danger-ultra-light: #fef2f2;
+    --profile-info: #7c3aed;
+    --profile-info-light: #ede9fe;
+    --profile-info-ultra-light: #f5f3ff;
+    
+    /* Cores Neutras */
+    --profile-card-bg: #ffffff;
+    --profile-card-bg-alt: #f8fafc;
+    --profile-card-bg-hover: #f1f5f9;
+    --profile-text: #0f172a;
+    --profile-text-secondary: #475569;
+    --profile-text-muted: #94a3b8;
+    --profile-text-light: #cbd5e1;
+    --profile-border: #caccce;
+    --profile-border-light: #f1f5f9;
+    --profile-border-hover: #cbd5e1;
+    
+    /* Sombras */
+    --profile-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+    --profile-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+    --profile-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --profile-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.10);
+    --profile-shadow-2xl: 0 24px 64px rgba(0, 0, 0, 0.12);
+    --profile-shadow-primary: 0 8px 24px rgba(37, 99, 235, 0.20);
+    --profile-shadow-primary-lg: 0 12px 40px rgba(37, 99, 235, 0.25);
+    
+    /* Bordas */
+    --profile-radius-sm: 8px;
+    --profile-radius: 12px;
+    --profile-radius-lg: 16px;
+    --profile-radius-xl: 20px;
+    --profile-radius-2xl: 24px;
+    --profile-radius-3xl: 28px;
+    --profile-radius-full: 9999px;
+    
+    /* Transições */
+    --profile-transition-fast: 0.15s ease;
+    --profile-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --profile-transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --profile-transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    /* Layout */
+    --profile-container-padding: 24px;
+    --profile-card-padding: 28px;
+    --profile-gap: 24px;
+}
+
+/* ============================================
+   2. CONTAINER PRINCIPAL
+   ============================================ */
+.profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--profile-container-padding);
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 12px;
+    }
+}
+
+/* ============================================
+   3. PROFILE HEADER CARD
+   ============================================ */
+.profile-header-card {
+    background: var(--profile-card-bg);
+    border: 1px solid var(--profile-border);
+    border-radius: var(--profile-radius-2xl);
+    overflow: hidden;
+    margin-bottom: var(--profile-gap);
+    box-shadow: var(--profile-shadow);
+    transition: all var(--profile-transition-slow);
+    position: relative;
+}
+
+.profile-header-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--profile-primary), var(--profile-info), var(--profile-primary));
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: -200% 0; }
+    50% { background-position: 200% 0; }
+}
+
+.profile-header-card:hover {
+    box-shadow: var(--profile-shadow-xl);
+    border-color: var(--profile-border-hover);
+}
+
+/* Banner */
+.profile-banner {
+    height: 180px;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 40%, #1e40af 80%, #1e3a5f 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, transparent 70%);
+    transform: rotate(-15deg);
+}
+
+.profile-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Gradient overlay for avatar */
+.profile-banner .banner-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, var(--profile-card-bg), transparent);
+    z-index: 1;
+}
+
+/* Content */
+.profile-header-content {
+    padding: 0 36px 36px 36px;
+    margin-top: -80px;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .profile-header-content {
+        padding: 0 24px 24px 24px;
+        margin-top: -60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-header-content {
+        padding: 0 16px 16px 16px;
+        margin-top: -50px;
+    }
+}
+
+/* ============================================
+   4. PROFILE AVATAR - VERSÃO PREMIUM
+   ============================================ */
+.profile-avatar-section {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .profile-avatar-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+    }
+}
+
+.profile-avatar-wrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.profile-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: white;
+    border: 5px solid var(--profile-card-bg);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255,255,255,0.1);
+    transition: all var(--profile-transition-slow);
+    position: relative;
+    cursor: default;
+    user-select: none;
+    letter-spacing: 0.02em;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.04) translateY(-4px);
+    box-shadow: 0 16px 56px rgba(0, 0, 0, 0.20), 0 0 0 2px rgba(255,255,255,0.2);
+}
+
+.profile-avatar .avatar-initials {
+    line-height: 1;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.04em;
+}
+
+/* Online Status Indicator - Premium */
+.profile-avatar .online-status {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 3px solid var(--profile-card-bg);
+    background: #22c55e;
+    box-shadow: 0 2px 12px rgba(34, 197, 94, 0.4);
+    animation: pulse-dot-premium 2.5s ease-in-out infinite;
+}
+
+.profile-avatar .online-status::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2px solid rgba(34, 197, 94, 0.2);
+    animation: pulse-ring 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot-premium {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes pulse-ring {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+/* Avatar Edit Button */
+.avatar-edit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--profile-primary);
+    border: 3px solid var(--profile-card-bg);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all var(--profile-transition);
+    box-shadow: 0 2px 12px rgba(37, 99, 235, 0.3);
+    margin-right: 24px;
+    margin-bottom: 4px;
+}
+
+.avatar-edit-btn:hover {
+    background: var(--profile-primary-dark);
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+}
+
+@media (max-width: 768px) {
+    .profile-avatar {
+        width: 110px;
+        height: 110px;
+        font-size: 2.6rem;
+    }
+    .profile-avatar .online-status {
+        width: 20px;
+        height: 20px;
+        bottom: 5px;
+        right: 5px;
+        border-width: 2.5px;
+    }
+    .avatar-edit-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.7rem;
+        margin-right: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-avatar {
+        width: 90px;
+        height: 90px;
+        font-size: 2.2rem;
+        border-width: 4px;
+    }
+    .profile-avatar .online-status {
+        width: 16px;
+        height: 16px;
+        bottom: 3px;
+        right: 3px;
+        border-width: 2px;
+    }
+    .avatar-edit-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 0.6rem;
+        margin-right: 12px;
+    }
+}
+
+/* Profile Info - Premium */
+.profile-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.profile-info .profile-name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.profile-info h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--profile-text);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.profile-info .profile-email {
+    color: var(--profile-text-secondary);
+    font-size: 0.95rem;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-info .profile-email i {
+    color: var(--profile-text-muted);
+    font-size: 0.85rem;
+}
+
+.profile-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 16px;
+    border-radius: var(--profile-radius-full);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: all var(--profile-transition-fast);
+    backdrop-filter: blur(4px);
+}
+
+.badge:hover {
+    transform: translateY(-1px);
+}
+
+.badge-admin {
+    background: var(--profile-primary-light);
+    color: var(--profile-primary);
+}
+
+.badge-admin i {
+    color: var(--profile-primary);
+}
+
+.badge-user {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.badge-user i {
+    color: #94a3b8;
+}
+
+.badge-verified {
+    background: var(--profile-success-light);
+    color: var(--profile-success);
+}
+
+.badge-verified i {
+    color: var(--profile-success);
+}
+
+.badge-premium {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #0f172a;
+}
+
+.badge-premium i {
+    color: #0f172a;
+}
+
+.badge-enterprise {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+}
+
+.badge-enterprise i {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .profile-info h2 {
+        font-size: 1.6rem;
+    }
+    .profile-info .profile-email {
+        font-size: 0.85rem;
+    }
+    .badge {
+        font-size: 0.6rem;
+        padding: 4px 12px;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-info h2 {
+        font-size: 1.3rem;
+    }
+    .profile-info .profile-email {
+        font-size: 0.8rem;
+    }
+    .profile-badges {
+        gap: 6px;
+    }
+    .badge {
+        font-size: 0.55rem;
+        padding: 3px 10px;
+        gap: 4px;
+    }
+}
+
+/* ============================================
+   5. PROFILE STATS - VERSÃO PREMIUM
+   ============================================ */
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    padding: 20px 28px;
+    background: var(--profile-card-bg-alt);
+    border-radius: var(--profile-radius-xl);
+    border: 1px solid var(--profile-border-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-stats::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--profile-primary), transparent);
+    opacity: 0.3;
+}
+
+@media (max-width: 992px) {
+    .profile-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 16px 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .profile-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+        padding: 14px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 12px 14px;
+    }
+}
+
+.stat-item {
+    text-align: center;
+    padding: 12px 6px;
+    border-radius: var(--profile-radius);
+    transition: all var(--profile-transition);
+    cursor: default;
+    position: relative;
+}
+
+.stat-item:hover {
+    background: rgba(37, 99, 235, 0.05);
+    transform: translateY(-2px);
+}
+
+.stat-item::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: var(--profile-border-light);
+}
+
+.stat-item:last-child::after {
+    display: none;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--profile-primary);
+    display: block;
+    line-height: 1.2;
+    transition: all var(--profile-transition);
+}
+
+.stat-item:hover .stat-value {
+    color: var(--profile-primary-dark);
+    transform: scale(1.02);
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: var(--profile-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    margin-top: 4px;
+    display: block;
+}
+
+.stat-item .stat-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: var(--profile-radius-full);
+    margin-top: 4px;
+}
+
+.stat-trend.up {
+    color: var(--profile-success);
+    background: var(--profile-success-ultra-light);
+}
+
+.stat-trend.down {
+    color: var(--profile-danger);
+    background: var(--profile-danger-ultra-light);
+}
+
+@media (max-width: 480px) {
+    .stat-value {
+        font-size: 1.4rem;
+    }
+    .stat-label {
+        font-size: 0.6rem;
+    }
+    .stat-item::after {
+        display: none;
+    }
+    .stat-item .stat-trend {
+        font-size: 0.5rem;
+        padding: 1px 6px;
+    }
+}
+
+/* ============================================
+   6. PROFILE TABS - VERSÃO PREMIUM
+   ============================================ */
+.profile-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: var(--profile-gap);
+    background: var(--profile-card-bg-alt);
+    border-radius: var(--profile-radius-xl);
+    padding: 6px;
+    border: 1px solid var(--profile-border);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    background: rgba(248, 250, 252, 0.95);
+}
+
+.profile-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-btn {
+    padding: 12px 28px;
+    border: none;
+    background: transparent;
+    color: var(--profile-text-secondary);
+    cursor: pointer;
+    border-radius: var(--profile-radius);
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all var(--profile-transition);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.tab-btn:hover {
+    color: var(--profile-primary);
+    background: rgba(37, 99, 235, 0.06);
+}
+
+.tab-btn.active {
+    background: var(--profile-card-bg);
+    color: var(--profile-primary);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 3px;
+    background: var(--profile-primary);
+    border-radius: var(--profile-radius-full) var(--profile-radius-full) 0 0;
+}
+
+.tab-btn i {
+    font-size: 0.95rem;
+    width: 20px;
+    text-align: center;
+}
+
+.tab-btn .tab-badge {
+    background: var(--profile-danger);
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: var(--profile-radius-full);
+    margin-left: 2px;
+}
+
+.tab-btn .tab-badge.warning {
+    background: var(--profile-warning);
+}
+
+.tab-btn .tab-badge.success {
+    background: var(--profile-success);
+}
+
+@media (max-width: 768px) {
+    .tab-btn {
+        padding: 10px 18px;
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+    .tab-btn i {
+        width: 16px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-btn {
+        padding: 8px 14px;
+        font-size: 0.7rem;
+        gap: 6px;
+        border-radius: var(--profile-radius-sm);
+    }
+    .tab-btn i {
+        display: none;
+    }
+    .profile-tabs {
+        padding: 4px;
+        gap: 2px;
+    }
+}
+
+.tab-content {
+    display: none;
+    animation: fadeSlideIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   7. FORM CARDS - VERSÃO PREMIUM
+   ============================================ */
+.form-card {
+    background: var(--profile-card-bg);
+    border: 1px solid var(--profile-border);
+    border-radius: var(--profile-radius-2xl);
+    padding: var(--profile-card-padding);
+    margin-bottom: var(--profile-gap);
+    box-shadow: var(--profile-shadow);
+    transition: all var(--profile-transition);
+}
+
+.form-card:hover {
+    box-shadow: var(--profile-shadow-md);
+    border-color: var(--profile-border-hover);
+}
+
+.form-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--profile-border-light);
+}
+
+.form-card-header h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--profile-text);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.form-card-header h3 i {
+    color: var(--profile-primary);
+    font-size: 1.2rem;
+    width: 28px;
+    text-align: center;
+}
+
+.form-card-header .btn-sm {
+    padding: 6px 18px;
+    font-size: 0.8rem;
+}
+
+/* ============================================
+   8. FORMULÁRIOS - VERSÃO PREMIUM
+   ============================================ */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.form-grid .full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--profile-text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group label i {
+    color: var(--profile-primary);
+    font-size: 0.85rem;
+    width: 18px;
+    text-align: center;
+}
+
+.form-group label .required {
+    color: var(--profile-danger);
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 18px;
+    border: 1.5px solid var(--profile-border);
+    border-radius: var(--profile-radius);
+    background: var(--profile-card-bg);
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--profile-text);
+    transition: all var(--profile-transition);
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: var(--profile-text-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--profile-primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
+    transform: translateY(-1px);
+}
+
+.form-group input:disabled {
+    background: var(--profile-card-bg-alt);
+    color: var(--profile-text-muted);
+    cursor: not-allowed;
+}
+
+.form-group input::placeholder {
+    color: var(--profile-text-light);
+}
+
+.form-group .helper-text {
+    font-size: 0.75rem;
+    color: var(--profile-text-muted);
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.form-group .helper-text i {
+    color: var(--profile-text-muted);
+    font-size: 0.7rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--profile-border-light);
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .form-actions {
+        flex-direction: column;
+    }
+    .form-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-card {
+        padding: 18px;
+        border-radius: var(--profile-radius-xl);
+    }
+    .form-group input,
+    .form-group select {
+        padding: 11px 14px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   9. PASSWORD STRENGTH - VERSÃO PREMIUM
+   ============================================ */
+.password-strength {
+    margin-top: 16px;
+    padding: 12px 0;
+}
+
+.password-strength-bar {
+    height: 6px;
+    border-radius: var(--profile-radius-full);
+    background: var(--profile-border);
+    overflow: hidden;
+    transition: all var(--profile-transition);
+    width: 0%;
+    position: relative;
+}
+
+.password-strength-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer-bar 2s ease-in-out infinite;
+}
+
+@keyframes shimmer-bar {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.password-strength-bar.weak {
+    width: 25%;
+    background: var(--profile-danger);
+}
+
+.password-strength-bar.medium {
+    width: 50%;
+    background: var(--profile-warning);
+}
+
+.password-strength-bar.strong {
+    width: 75%;
+    background: var(--profile-success);
+}
+
+.password-strength-bar.very-strong {
+    width: 100%;
+    background: var(--profile-primary);
+}
+
+.password-strength-text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 0.7rem;
+    color: var(--profile-text-muted);
+}
+
+.password-strength-text .strength-label {
+    font-weight: 600;
+}
+
+.password-strength-text .strength-label.weak { color: var(--profile-danger); }
+.password-strength-text .strength-label.medium { color: var(--profile-warning); }
+.password-strength-text .strength-label.strong { color: var(--profile-success); }
+.password-strength-text .strength-label.very-strong { color: var(--profile-primary); }
+
+/* ============================================
+   10. SESSIONS LIST - VERSÃO PREMIUM
+   ============================================ */
+.sessions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.session-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 24px;
+    background: var(--profile-card-bg-alt);
+    border-radius: var(--profile-radius-xl);
+    border: 1px solid var(--profile-border-light);
+    transition: all var(--profile-transition);
+}
+
+.session-item:hover {
+    border-color: var(--profile-border-hover);
+    box-shadow: var(--profile-shadow);
+    transform: translateX(4px);
+}
+
+.session-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--profile-radius);
+    background: var(--profile-primary-light);
+    color: var(--profile-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    transition: all var(--profile-transition);
+}
+
+.session-item:hover .session-icon {
+    background: var(--profile-primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+.session-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.session-info h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--profile-text);
+    margin-bottom: 3px;
+}
+
+.session-info p {
+    font-size: 0.8rem;
+    color: var(--profile-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.session-info .session-time {
+    font-size: 0.7rem;
+    color: var(--profile-text-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.session-status {
+    flex-shrink: 0;
+}
+
+.badge-success {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: var(--profile-radius-full);
+    background: var(--profile-success-light);
+    color: var(--profile-success);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.badge-success::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--profile-success);
+    animation: pulse-dot-premium 2s ease-in-out infinite;
+}
+
+.badge-warning {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 16px;
+    border-radius: var(--profile-radius-full);
+    background: var(--profile-warning-light);
+    color: var(--profile-warning);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    .session-item {
+        flex-wrap: wrap;
+        padding: 14px 16px;
+        gap: 12px;
+    }
+    .session-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    .session-info h4 {
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================
+   11. ACTIVITY LIST - VERSÃO PREMIUM
+   ============================================ */
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--profile-border-light);
+    transition: all var(--profile-transition);
+    border-radius: var(--profile-radius);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-item:hover {
+    padding-left: 12px;
+    background: var(--profile-card-bg-alt);
+    border-radius: var(--profile-radius);
+}
+
+.activity-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: var(--profile-radius-full);
+    background: var(--profile-primary-light);
+    color: var(--profile-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: all var(--profile-transition);
+}
+
+.activity-item:hover .activity-icon {
+    background: var(--profile-primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+.activity-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.activity-content .activity-title {
+    font-weight: 600;
+    color: var(--profile-text);
+    font-size: 0.9rem;
+}
+
+.activity-content .activity-description {
+    font-size: 0.85rem;
+    color: var(--profile-text-secondary);
+    margin-top: 2px;
+}
+
+.activity-content .activity-time {
+    font-size: 0.7rem;
+    color: var(--profile-text-muted);
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.activity-loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--profile-text-muted);
+}
+
+/* ============================================
+   12. DANGER ZONE - VERSÃO PREMIUM
+   ============================================ */
+.danger-zone {
+    background: var(--profile-card-bg);
+    border: 1px solid #fecaca;
+    border-radius: var(--profile-radius-2xl);
+    padding: var(--profile-card-padding);
+    margin-top: var(--profile-gap);
+    box-shadow: var(--profile-shadow);
+    transition: all var(--profile-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.danger-zone::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--profile-danger), #f87171, var(--profile-danger));
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.danger-zone:hover {
+    border-color: #f87171;
+    box-shadow: 0 4px 24px rgba(220, 38, 38, 0.08);
+}
+
+.danger-zone h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--profile-danger);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #fecaca;
+}
+
+.danger-zone h3 i {
+    font-size: 1.1rem;
+}
+
+.danger-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.danger-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 24px;
+    background: var(--profile-card-bg-alt);
+    border-radius: var(--profile-radius-xl);
+    border: 1px solid var(--profile-border-light);
+    transition: all var(--profile-transition);
+}
+
+.danger-item:hover {
+    border-color: #fecaca;
+    background: #fef2f2;
+    transform: translateX(4px);
+}
+
+.danger-info {
+    flex: 1;
+}
+
+.danger-info h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--profile-text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.danger-info h4 i {
+    font-size: 0.9rem;
+}
+
+.danger-info p {
+    font-size: 0.8rem;
+    color: var(--profile-text-muted);
+    margin-top: 2px;
+}
+
+.danger-item .btn {
+    flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+    .danger-item {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 14px;
+        padding: 16px 18px;
+    }
+    .danger-item .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .danger-zone {
+        padding: 18px;
+        border-radius: var(--profile-radius-xl);
+    }
+    .danger-item {
+        padding: 14px 16px;
+    }
+    .danger-info h4 {
+        font-size: 0.8rem;
+    }
+    .danger-info p {
+        font-size: 0.7rem;
+    }
+}
+
+
+
+
+
+
+/* ============================================
+   TOAST
+   ============================================ */
+.toast-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 420px;
+}
+
+.toast {
+    padding: 14px 20px;
+    border-radius: 10px;
+    background: var(--profile-card-bg);
+    border: 1px solid var(--profile-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slideUp 0.35s ease;
+}
+
+.toast i { font-size: 1.1rem; }
+.toast span { flex: 1; font-size: 0.9rem; color: var(--profile-text); }
+.toast-close { 
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--profile-text-muted);
+    padding: 4px;
+    font-size: 1.1rem;
+    transition: var(--profile-transition);
+}
+
+.toast-close:hover {
+    color: var(--profile-danger);
+}
+
+.toast-success { border-left: 4px solid var(--profile-success); }
+.toast-success i { color: var(--profile-success); }
+
+.toast-error { border-left: 4px solid var(--profile-danger); }
+.toast-error i { color: var(--profile-danger); }
+
+.toast-warning { border-left: 4px solid var(--profile-warning); }
+.toast-warning i { color: var(--profile-warning); }
+
+.toast-info { border-left: 4px solid var(--profile-primary); }
+.toast-info i { color: var(--profile-primary); }
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+
+
+
+/* ============================================
+   14. MODAL CONFIRMAÇÃO - VERSÃO PREMIUM
+   ============================================ */
+.modal-content {
+    max-width: 480px;
+    border-radius: var(--profile-radius-2xl) !important;
+    overflow: hidden;
+}
+
+.modal-icon {
+    font-size: 3.5rem;
+    display: block;
+    margin: 0 auto 16px;
+    text-align: center;
+}
+
+.modal-icon.danger {
+    color: var(--profile-danger);
+}
+
+.modal-icon.warning {
+    color: var(--profile-warning);
+}
+
+.modal-icon.success {
+    color: var(--profile-success);
+}
+
+.modal-icon.info {
+    color: var(--profile-primary);
+}
+
+.modal-divider {
+    height: 1px;
+    background: var(--profile-border);
+    margin: 20px 0;
+}
+
+.password-input {
+    margin-top: 12px;
+}
+
+.password-input label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--profile-text);
+    margin-bottom: 8px;
+}
+
+.password-input label i {
+    color: var(--profile-primary);
+    margin-right: 8px;
+}
+
+.password-input input {
+    width: 100%;
+    padding: 13px 18px;
+    border: 1.5px solid var(--profile-border);
+    border-radius: var(--profile-radius);
+    font-size: 0.95rem;
+    transition: all var(--profile-transition);
+}
+
+.password-input input:focus {
+    outline: none;
+    border-color: var(--profile-primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+/* ============================================
+   15. LOADING SPINNER - VERSÃO PREMIUM
+   ============================================ */
+.spinner {
+    width: 44px;
+    height: 44px;
+    border: 3px solid var(--profile-border);
+    border-top-color: var(--profile-primary);
+    border-radius: 50%;
+    animation: spin 0.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-sm {
+    width: 28px;
+    height: 28px;
+    border-width: 2.5px;
+}
+
+/* ============================================
+   16. BUTTONS - VERSÃO PREMIUM
+   ============================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 11px 28px;
+    border: none;
+    border-radius: var(--profile-radius);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--profile-transition);
+    text-decoration: none;
+    font-family: inherit;
+    line-height: 1.5;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+    opacity: 0;
+    transition: opacity var(--profile-transition);
+}
+
+.btn:hover::after {
+    opacity: 1;
+}
+
+.btn-primary {
+    background: var(--profile-primary);
+    color: white;
+    box-shadow: 0 2px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--profile-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--profile-shadow-primary-lg);
+}
+
+.btn-secondary {
+    background: var(--profile-card-bg-alt);
+    color: var(--profile-text-secondary);
+    border: 1px solid var(--profile-border);
+}
+
+.btn-secondary:hover {
+    background: var(--profile-card-bg-hover);
+    border-color: var(--profile-border-hover);
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: var(--profile-danger);
+    color: white;
+    box-shadow: 0 2px 12px rgba(220, 38, 38, 0.2);
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.25);
+}
+
+.btn-warning {
+    background: var(--profile-warning);
+    color: white;
+    box-shadow: 0 2px 12px rgba(217, 119, 6, 0.2);
+}
+
+.btn-warning:hover {
+    background: #b45309;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.25);
+}
+
+.btn-success {
+    background: var(--profile-success);
+    color: white;
+    box-shadow: 0 2px 12px rgba(5, 150, 105, 0.2);
+}
+
+.btn-success:hover {
+    background: #047857;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(5, 150, 105, 0.25);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--profile-primary);
+    border: 1.5px solid var(--profile-primary);
+}
+
+.btn-outline:hover {
+    background: var(--profile-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--profile-shadow-primary);
+}
+
+.btn-sm {
+    padding: 7px 18px;
+    font-size: 0.8rem;
+    border-radius: var(--profile-radius-sm);
+}
+
+.btn-lg {
+    padding: 14px 36px;
+    font-size: 1rem;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.btn i {
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   17. ADMIN CARDS - VERSÃO PREMIUM
+   ============================================ */
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.admin-card {
+    background: var(--profile-card-bg-alt);
+    border-radius: var(--profile-radius-xl);
+    padding: 24px 20px;
+    text-align: center;
+    border: 1px solid var(--profile-border-light);
+    text-decoration: none;
+    color: var(--profile-text);
+    transition: all var(--profile-transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--profile-shadow-md);
+    border-color: var(--profile-primary-light);
+    background: var(--profile-primary-ultra-light);
+}
+
+.admin-card i {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.admin-card .admin-card-icon.blue { color: var(--profile-primary); }
+.admin-card .admin-card-icon.green { color: var(--profile-success); }
+.admin-card .admin-card-icon.orange { color: var(--profile-warning); }
+.admin-card .admin-card-icon.purple { color: var(--profile-info); }
+
+.admin-card h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.admin-card p {
+    font-size: 0.75rem;
+    color: var(--profile-text-muted);
+}
+
+/* ============================================
+   18. RESPONSIVE ADJUSTMENTS - PREMIUM
+   ============================================ */
+@media (max-width: 1024px) {
+    .profile-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .profile-stats .stat-item:nth-child(4)::after,
+    .profile-stats .stat-item:nth-child(5)::after {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-header-card {
+        border-radius: var(--profile-radius-xl);
+    }
+    .profile-banner {
+        height: 120px;
+    }
+    .profile-avatar {
+        width: 110px;
+        height: 110px;
+        font-size: 2.6rem;
+    }
+    .profile-avatar .online-status {
+        width: 20px;
+        height: 20px;
+        bottom: 5px;
+        right: 5px;
+    }
+    .profile-info h2 {
+        font-size: 1.6rem;
+    }
+    .profile-info .profile-email {
+        font-size: 0.85rem;
+    }
+    .form-card {
+        padding: 20px;
+        border-radius: var(--profile-radius-xl);
+    }
+    .danger-zone {
+        padding: 20px;
+        border-radius: var(--profile-radius-xl);
+    }
+    .profile-tabs {
+        border-radius: var(--profile-radius-lg);
+    }
+    .admin-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-banner {
+        height: 90px;
+    }
+    .profile-avatar {
+        width: 90px;
+        height: 90px;
+        font-size: 2.2rem;
+        border-width: 4px;
+    }
+    .profile-avatar .online-status {
+        width: 16px;
+        height: 16px;
+        bottom: 3px;
+        right: 3px;
+        border-width: 2px;
+    }
+    .profile-info h2 {
+        font-size: 1.3rem;
+    }
+    .profile-info .profile-email {
+        font-size: 0.8rem;
+    }
+    .profile-stats {
+        gap: 4px;
+        padding: 12px;
+        border-radius: var(--profile-radius-lg);
+    }
+    .stat-value {
+        font-size: 1.2rem;
+    }
+    .stat-label {
+        font-size: 0.55rem;
+    }
+    .form-card {
+        padding: 16px;
+        border-radius: var(--profile-radius-lg);
+    }
+    .form-card-header h3 {
+        font-size: 1rem;
+    }
+    .danger-zone {
+        padding: 16px;
+        border-radius: var(--profile-radius-lg);
+    }
+    .danger-item {
+        padding: 14px 16px;
+    }
+    .admin-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .admin-card {
+        padding: 16px 12px;
+    }
+    .admin-card i {
+        font-size: 1.8rem;
+    }
+    .admin-card h4 {
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================================
+   19. SCROLLBAR PERSONALIZADA - PREMIUM
+   ============================================ */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--profile-card-bg-alt);
+    border-radius: var(--profile-radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--profile-border);
+    border-radius: var(--profile-radius-full);
+    transition: all var(--profile-transition);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--profile-text-muted);
+}
+
+/* ============================================
+   20. ANIMAÇÕES ADICIONAIS - PREMIUM
+   ============================================ */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(37, 99, 235, 0);
+    }
+}
+
+.pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-down {
+    animation: slideDown 0.3s ease;
+}
+
+/* ============================================
+   21. UTILITY CLASSES - PREMIUM
+   ============================================ */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.text-muted { color: var(--profile-text-muted); }
+.text-success { color: var(--profile-success); }
+.text-danger { color: var(--profile-danger); }
+.text-warning { color: var(--profile-warning); }
+.text-primary { color: var(--profile-primary); }
+
+.bg-muted { background: var(--profile-card-bg-alt); }
+.bg-success { background: var(--profile-success-ultra-light); }
+.bg-danger { background: var(--profile-danger-ultra-light); }
+.bg-warning { background: var(--profile-warning-ultra-light); }
+.bg-primary { background: var(--profile-primary-ultra-light); }
+
+.mt-1 { margin-top: 4px; }
+.mt-2 { margin-top: 8px; }
+.mt-3 { margin-top: 12px; }
+.mt-4 { margin-top: 16px; }
+.mt-5 { margin-top: 24px; }
+.mt-6 { margin-top: 32px; }
+
+.mb-1 { margin-bottom: 4px; }
+.mb-2 { margin-bottom: 8px; }
+.mb-3 { margin-bottom: 12px; }
+.mb-4 { margin-bottom: 16px; }
+.mb-5 { margin-bottom: 24px; }
+.mb-6 { margin-bottom: 32px; }
+
+.hidden { display: none !important; }
+.visible { display: block !important; }
+
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-column { display: flex; flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-1 { flex: 1; }
+
+.gap-1 { gap: 4px; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.gap-4 { gap: 16px; }
+.gap-5 { gap: 24px; }
+
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+
+.rounded { border-radius: var(--profile-radius); }
+.rounded-lg { border-radius: var(--profile-radius-lg); }
+.rounded-xl { border-radius: var(--profile-radius-xl); }
+.rounded-full { border-radius: var(--profile-radius-full); }
+
+.shadow-sm { box-shadow: var(--profile-shadow); }
+.shadow-md { box-shadow: var(--profile-shadow-md); }
+.shadow-lg { box-shadow: var(--profile-shadow-lg); }
+.shadow-xl { box-shadow: var(--profile-shadow-xl); }

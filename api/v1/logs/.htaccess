@@ -1,0 +1,15 @@
+# ============================================
+# PROTEÇÃO DO DIRETÓRIO DE LOGS
+# ============================================
+
+# Negar acesso a todos os arquivos
+<Files "*">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Permitir apenas arquivos específicos (se necessário)
+# <Files "*.log">
+#     Order allow,deny
+#     Deny from all
+# </Files>

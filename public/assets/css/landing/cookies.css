@@ -1,0 +1,1570 @@
+/**
+ * ============================================================
+ * CARDOXIS - Estilos da Política de Cookies RF
+ * ============================================================
+ * 
+ */
+
+/* ============================================================
+   1. VARIÁVEIS
+   ============================================================ */
+:root {
+    --primary: #0052CC;
+    --primary-dark: #003D99;
+    --primary-light: #4C9AFF;
+    --primary-ultra-light: #E8F0FE;
+    --primary-rgb: 0, 82, 204;
+    
+    --secondary: #00A3BF;
+    --secondary-light: #00B8D4;
+    --success: #00875A;
+    --success-light: #E3FCEF;
+    --warning: #FF8B00;
+    --warning-light: #FFF4E5;
+    --danger: #DE350B;
+    --danger-light: #FFEBE6;
+    --info: #6554C0;
+    --info-light: #EAE6FF;
+    
+    --dark: #172B4D;
+    --dark-gray: #42526E;
+    --gray: #6B778C;
+    --gray-light: #A5ADBA;
+    --gray-ultra-light: #DFE1E6;
+    --gray-bg: #F4F5F7;
+    --white: #FFFFFF;
+    
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+    --shadow-xl: 0 20px 40px rgba(0,0,0,0.08);
+    --shadow-2xl: 0 30px 60px rgba(0,0,0,0.15);
+    
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 18px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+    
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-4xl: 80px;
+    --spacing-5xl: 100px;
+    
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.25s ease;
+    --transition-premium: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ============================================================
+   2. RESET BÁSICO
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--dark);
+    background: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   3. HERO - COOKIES
+   ============================================================ */
+.cookies-hero {
+    position: relative;
+    padding: 160px 0 80px;
+    background: linear-gradient(135deg, #F0F5FF 0%, #E8F0FE 50%, #DCE6F5 100%);
+    overflow: hidden;
+}
+
+.cookies-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.cookies-hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--dark);
+    margin-bottom: var(--spacing-lg);
+}
+
+.cookies-hero-title .gradient-text {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cookies-hero-description {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--primary-ultra-light);
+    color: var(--primary);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+}
+
+.cookies-hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.cookies-hero-meta span {
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cookies-hero-meta i {
+    color: var(--primary);
+}
+
+/* Elementos decorativos */
+.cookies-hero-shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cookies-hero-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.06;
+}
+
+.cookies-hero-shapes .shape-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--primary);
+    top: -150px;
+    right: -100px;
+}
+
+.cookies-hero-shapes .shape-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--secondary);
+    bottom: -100px;
+    left: -80px;
+}
+
+.cookies-hero-shapes .shape-3 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ============================================================
+   4. SECÇÃO DE AÇÕES
+   ============================================================ */
+.cookies-actions-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-ultra-light);
+}
+
+.cookies-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 10px 24px;
+    border: 1.5px solid var(--gray-ultra-light);
+    border-radius: var(--radius-full);
+    background: var(--white);
+    color: var(--dark-gray);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-premium);
+    font-family: var(--font-family);
+}
+
+.action-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.action-btn i {
+    font-size: 1rem;
+}
+
+.action-btn-print:hover {
+    border-color: var(--info);
+    color: var(--info);
+}
+
+.action-btn-pdf:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.action-btn-copy:hover {
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.action-btn-settings:hover {
+    border-color: var(--warning);
+    color: var(--warning);
+}
+
+/* ============================================================
+   5. SECÇÃO SUMÁRIO / ÍNDICE
+   ============================================================ */
+.cookies-summary {
+    padding: var(--spacing-3xl) 0;
+    background: var(--gray-bg);
+}
+
+.summary-card {
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-ultra-light);
+}
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--gray-ultra-light);
+}
+
+.summary-header i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.summary-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 0;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.summary-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    color: var(--dark-gray);
+    text-decoration: none;
+    transition: var(--transition-base);
+    font-size: 0.85rem;
+}
+
+.summary-link:hover {
+    background: var(--primary-ultra-light);
+    color: var(--primary);
+}
+
+.summary-link.active {
+    background: var(--primary-ultra-light);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.summary-link i {
+    color: var(--primary);
+    font-size: 0.7rem;
+}
+
+/* ============================================================
+   6. CONTEÚDO PRINCIPAL
+   ============================================================ */
+.cookies-content {
+    padding: var(--spacing-4xl) 0;
+    background: var(--white);
+}
+
+.cookies-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Secções */
+.cookies-section {
+    margin-bottom: var(--spacing-3xl);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: 2px solid var(--gray-bg);
+}
+
+.cookies-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.section-header-inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-header-inline h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-ultra-light);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 12px;
+    border-radius: var(--radius-full);
+    min-width: 40px;
+    letter-spacing: 0.5px;
+}
+
+.copy-link {
+    background: var(--gray-bg);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--gray);
+    transition: var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.copy-link:hover {
+    background: var(--primary-ultra-light);
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+.copy-link.copied {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.section-content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+    color: var(--dark-gray);
+}
+
+.section-content ul {
+    margin: var(--spacing-md) 0 var(--spacing-lg) var(--spacing-xl);
+}
+
+.section-content li {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.7;
+    color: var(--dark-gray);
+}
+
+.section-content li strong {
+    color: var(--dark);
+}
+
+/* ============================================================
+   7. BENEFÍCIOS DOS COOKIES
+   ============================================================ */
+.cookie-types-intro {
+    margin-top: var(--spacing-xl);
+}
+
+.cookie-types-intro h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: var(--spacing-lg);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.benefit-item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--gray-bg);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+    align-items: flex-start;
+}
+
+.benefit-item:hover {
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.benefit-item i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.benefit-item strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--dark);
+    margin-bottom: 2px;
+}
+
+.benefit-item p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--gray);
+}
+
+/* ============================================================
+   8. TIPOS DE COOKIES
+   ============================================================ */
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.type-card {
+    padding: var(--spacing-lg);
+    background: var(--gray-bg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: var(--transition-base);
+    border: 1px solid transparent;
+}
+
+.type-card:hover {
+    border-color: var(--primary-light);
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.type-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.type-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.type-card p {
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+    margin-bottom: var(--spacing-md);
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.type-badge-essential {
+    background: var(--primary-ultra-light);
+    color: var(--primary);
+}
+
+.type-badge-optional {
+    background: var(--gray-ultra-light);
+    color: var(--gray);
+}
+
+/* Duração Info */
+.duration-info {
+    background: var(--gray-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.duration-info h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.duration-info h4 i {
+    color: var(--primary);
+    margin-right: var(--spacing-sm);
+}
+
+.duration-info ul {
+    margin: 0;
+    padding-left: var(--spacing-xl);
+}
+
+.duration-info ul li {
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+    margin-bottom: 4px;
+}
+
+/* ============================================================
+   9. TABELAS
+   ============================================================ */
+.table-wrapper {
+    overflow-x: auto;
+    margin: var(--spacing-lg) 0;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-ultra-light);
+    background: var(--white);
+}
+
+.table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.table-wrapper table th {
+    background: var(--gray-bg);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--dark);
+    border-bottom: 2px solid var(--gray-ultra-light);
+}
+
+.table-wrapper table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--gray-ultra-light);
+    color: var(--dark-gray);
+}
+
+.table-wrapper table tr:hover {
+    background: var(--gray-bg);
+}
+
+.table-wrapper table tr:last-child td {
+    border-bottom: none;
+}
+
+.table-wrapper table code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    background: var(--gray-bg);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    color: var(--primary);
+}
+
+/* Cookie Type Badge na tabela */
+.cookie-type-badge {
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.cookie-type-essencial {
+    background: var(--primary-ultra-light);
+    color: var(--primary);
+}
+
+.cookie-type-funcional {
+    background: var(--info-light);
+    color: var(--info);
+}
+
+.cookie-type-analítico {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.cookie-type-marketing {
+    background: var(--warning-light);
+    color: var(--warning);
+}
+
+/* ============================================================
+   10. NOTAS INFORMATIVAS
+   ============================================================ */
+.info-note {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--primary-ultra-light);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--primary);
+    margin: var(--spacing-lg) 0;
+}
+
+.info-note i {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.info-note span {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.info-note strong {
+    color: var(--dark);
+}
+
+.info-note-warning {
+    background: var(--warning-light);
+    border-left-color: var(--warning);
+}
+
+.info-note-warning i {
+    color: var(--warning);
+}
+
+/* ============================================================
+   11. COOKIES DE TERCEIROS
+   ============================================================ */
+.third-party-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.third-party-card {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--gray-bg);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+    align-items: flex-start;
+}
+
+.third-party-card:hover {
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.third-party-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    flex-shrink: 0;
+    width: 48px;
+    text-align: center;
+}
+
+.third-party-card h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 4px;
+}
+
+.third-party-card p {
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+    margin-bottom: var(--spacing-sm);
+}
+
+.third-party-link {
+    font-size: 0.8rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.third-party-link:hover {
+    text-decoration: underline;
+}
+
+.third-party-link i {
+    font-size: 0.65rem;
+}
+
+/* ============================================================
+   12. GERENCIAMENTO DE COOKIES
+   ============================================================ */
+.manage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.manage-card {
+    padding: var(--spacing-xl);
+    background: var(--gray-bg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: var(--transition-base);
+    border: 1px solid transparent;
+}
+
+.manage-card:hover {
+    border-color: var(--primary-light);
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.manage-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.manage-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.manage-card p {
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+    margin-bottom: var(--spacing-lg);
+}
+
+.btn-manage {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 10px 24px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-premium);
+    font-family: var(--font-family);
+}
+
+.btn-manage:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* Browser Links */
+.browser-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-top: var(--spacing-md);
+}
+
+.browser-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border: 1px solid var(--gray-ultra-light);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    color: var(--dark-gray);
+    text-decoration: none;
+    transition: var(--transition-base);
+    font-weight: 500;
+}
+
+.browser-link:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-ultra-light);
+}
+
+.browser-link i {
+    font-size: 1rem;
+}
+
+/* Consent Options */
+.consent-options {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: var(--gray-bg);
+    border-radius: var(--radius-lg);
+}
+
+.consent-options h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.options-list {
+    display: flex;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+.option-item i {
+    font-size: 1.1rem;
+}
+
+.option-item strong {
+    color: var(--dark);
+}
+
+.text-success {
+    color: var(--success);
+}
+
+.text-danger {
+    color: var(--danger);
+}
+
+/* ============================================================
+   13. SEGURANÇA E PRIVACIDADE
+   ============================================================ */
+.security-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.security-feature {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--gray-bg);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+    align-items: flex-start;
+}
+
+.security-feature:hover {
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.security-feature i {
+    font-size: 1.3rem;
+    color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.security-feature strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+
+.security-feature p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+/* ============================================================
+   14. RETENÇÃO DE COOKIES
+   ============================================================ */
+.retention-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.retention-item {
+    padding: var(--spacing-lg);
+    background: var(--gray-bg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: var(--transition-base);
+    border: 1px solid transparent;
+}
+
+.retention-item:hover {
+    border-color: var(--primary-light);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.retention-period {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.retention-item p {
+    font-size: 0.8rem;
+    color: var(--dark-gray);
+    margin: 0;
+}
+
+/* ============================================================
+   15. HISTÓRICO DE VERSÕES
+   ============================================================ */
+.version-history {
+    background: var(--gray-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.version-history h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.version-history h4 i {
+    color: var(--primary);
+    margin-right: var(--spacing-sm);
+}
+
+.version-history ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.version-history ul li {
+    padding: 4px 0;
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+    border-bottom: 1px solid var(--gray-ultra-light);
+}
+
+.version-history ul li:last-child {
+    border-bottom: none;
+}
+
+/* ============================================================
+   16. CONTACTO
+   ============================================================ */
+.contact-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.contact-item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--gray-bg);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+}
+
+.contact-item:hover {
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-item i {
+    font-size: 1.3rem;
+    color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-item strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+}
+
+/* ============================================================
+   17. GERENCIAMENTO DE COOKIES (FOOTER)
+   ============================================================ */
+.cookie-management-section {
+    padding: var(--spacing-4xl) 0;
+    background: var(--gray-bg);
+}
+
+.management-card {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--spacing-2xl);
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--gray-ultra-light);
+}
+
+.management-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.management-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.management-card p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    max-width: 500px;
+    margin: 0 auto var(--spacing-xl);
+    line-height: 1.7;
+}
+
+.management-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-manage-cookies {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 14px 28px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-premium);
+    font-family: var(--font-family);
+}
+
+.btn-manage-cookies:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 82, 204, 0.3);
+}
+
+.btn-accept-all {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 14px 28px;
+    background: var(--success);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-premium);
+    font-family: var(--font-family);
+}
+
+.btn-accept-all:hover {
+    background: #059669;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.3);
+}
+
+.btn-reject-all {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 14px 28px;
+    background: transparent;
+    color: var(--dark-gray);
+    border: 2px solid var(--gray-ultra-light);
+    border-radius: var(--radius-full);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-premium);
+    font-family: var(--font-family);
+}
+
+.btn-reject-all:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+    transform: translateY(-3px);
+}
+
+.management-date {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--gray-ultra-light);
+    font-size: 0.85rem;
+    color: var(--gray);
+}
+
+.management-date i {
+    margin-right: var(--spacing-sm);
+    color: var(--primary);
+}
+
+/* ============================================================
+   18. BOTÃO VOLTAR AO TOPO
+   ============================================================ */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+/* ============================================================
+   19. SCROLLBAR GLOBAL
+   ============================================================ */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-bg);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray-light);
+    border-radius: var(--radius-full);
+    transition: var(--transition-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray);
+}
+
+/* ============================================================
+   20. RESPONSIVO
+   ============================================================ */
+
+/* 1024px - 1199px */
+@media (max-width: 1024px) {
+    .cookies-hero {
+        padding: 130px 0 60px;
+    }
+    
+    .cookies-hero-title {
+        font-size: 2.6rem;
+    }
+    
+    .manage-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .third-party-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 768px - 1023px */
+@media (max-width: 768px) {
+    .cookies-hero {
+        padding: 110px 0 40px;
+    }
+    
+    .cookies-hero-title {
+        font-size: 2rem;
+    }
+    
+    .cookies-hero-description {
+        font-size: 1rem;
+    }
+    
+    .cookies-hero-meta {
+        gap: var(--spacing-md);
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header-inline {
+        flex-wrap: wrap;
+    }
+    
+    .section-header-inline h2 {
+        font-size: 1.3rem;
+        flex-wrap: wrap;
+    }
+    
+    .types-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .security-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .retention-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .cookies-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .management-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-manage-cookies,
+    .btn-accept-all,
+    .btn-reject-all {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+    }
+    
+    .management-card {
+        padding: var(--spacing-xl);
+    }
+    
+    .options-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+}
+
+/* 480px - 767px */
+@media (max-width: 480px) {
+    .cookies-hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.7rem;
+        padding: 4px 14px;
+    }
+    
+    .cookies-hero-meta span {
+        font-size: 0.75rem;
+    }
+    
+    .section-header-inline h2 {
+        font-size: 1.1rem;
+    }
+    
+    .section-number {
+        font-size: 0.65rem;
+        padding: 2px 8px;
+        min-width: 32px;
+    }
+    
+    .types-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .retention-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .summary-link {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+    
+    .table-wrapper table {
+        font-size: 0.75rem;
+    }
+    
+    .table-wrapper table th,
+    .table-wrapper table td {
+        padding: 8px 10px;
+    }
+    
+    .table-wrapper table code {
+        font-size: 0.7rem;
+    }
+    
+    .manage-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .third-party-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .benefit-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .security-feature {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .management-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .management-card p {
+        font-size: 0.9rem;
+    }
+    
+    .browser-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .option-item {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ============================================================
+   21. ANIMAÇÃO AOS
+   ============================================================ */
+[data-aos] {
+    pointer-events: none;
+}
+
+[data-aos].aos-animate {
+    pointer-events: auto;
+}
+
+/* ============================================================
+   22. ESTILOS DE IMPRESSÃO
+   ============================================================ */
+@media print {
+    .cookies-hero {
+        padding: 20px 0;
+        background: var(--white);
+    }
+    
+    .cookies-hero-title .gradient-text {
+        -webkit-text-fill-color: black;
+        background: none;
+        color: black;
+    }
+    
+    .cookies-hero-shapes {
+        display: none;
+    }
+    
+    .cookies-actions-section,
+    .cookies-summary,
+    .cookie-management-section,
+    .back-to-top {
+        display: none !important;
+    }
+    
+    .cookies-section {
+        page-break-inside: avoid;
+    }
+    
+    .table-wrapper {
+        border: 1px solid #ddd;
+    }
+    
+    .table-wrapper table {
+        border-collapse: collapse;
+    }
+    
+    .table-wrapper table th {
+        background: #f4f4f4;
+        border-bottom: 2px solid #ddd;
+    }
+    
+    .table-wrapper table td {
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .type-card,
+    .benefit-item,
+    .security-feature,
+    .retention-item,
+    .contact-item,
+    .manage-card,
+    .third-party-card {
+        background: #f9f9f9;
+        border: 1px solid #eee;
+    }
+    
+    .info-note {
+        border: 1px solid #ddd;
+        background: #f9f9f9;
+    }
+}
+
+/* ============================================================
+   23. REDUÇÃO DE MOVIMENTO
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
