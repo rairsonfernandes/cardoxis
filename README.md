@@ -15,7 +15,7 @@
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.0%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
 [![MySQL Version](https://img.shields.io/badge/MySQL-5.7%2B-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
-[![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)](https://cardoxis.com)
+[![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)](https://cardoxis.ct.ws)
 [![Status](https://img.shields.io/badge/Status-v1.0.0-success?style=for-the-badge)](#-roadmap)
 
 <p align="center">
