@@ -2,7 +2,7 @@
 
 # 🚀 CARDOXIS — Gestão Inteligente de Frotas
 
-![CARDOXIS Banner](https://cardoxis.com/assets/img/og-image.jpg)
+![CARDOXIS Banner](https://cardoxis.ct.ws/public/assets/img/logo/logo.png)
 
 <br/>
 
@@ -370,12 +370,10 @@ Para licenciamento corporativo ou comercial, solicite atendimento via contato.
 ---
 
 ## 📞 Contato
-
 <div align="left">
 
-* 🌐 **Website:** [cardoxis.com](https://cardoxis.com)
-* 📧 **E-mail:** [contato@cardoxis.com](mailto:contato@cardoxis.com)
-* 📱 **WhatsApp:** [+351 900 000 000](https://wa.me/351900000000)
-* 📍 **Localização:** Portugal 🇵🇹
+🌐 cardoxis.ct.ws
+
+📞 cardoxis.ct.ws/contact
 
 </div>
