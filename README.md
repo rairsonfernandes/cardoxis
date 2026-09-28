@@ -163,11 +163,11 @@ git clone https://github.com/cardoxis/cardoxis.git
 cd cardoxis
 2. Configure o ambiente
 Copie o arquivo de configuração de exemplo:
-
-bash
+```
+```bash
 cp .env.example .env
 Edite o arquivo .env com suas configurações:
-
+```
 env
 # Database Configuration
 DB_HOST=localhost
@@ -252,7 +252,7 @@ try {
 } catch (Exception $e) {
     echo "Erro: " . $e->getMessage();
 }
-📁 Estrutura de Diretórios
+##📁 Estrutura de Diretórios
 text
 cardoxis/
 ├── .htaccess                      # Configuração de rotas Apache
@@ -305,7 +305,7 @@ cardoxis/
         └── temp/                  # Arquivos temporários
 
         
-🔄 Fluxo do Sistema
+####🔄 Fluxo do Sistema
 
 
 
@@ -426,7 +426,7 @@ Termos de Uso:
 
 Para licenciamento comercial, entre em contato.
 
-📞 Contato
+####📞 Contato
 CARDOXIS
 
 🌐 Website: https://cardoxis.com
@@ -439,7 +439,7 @@ CARDOXIS
 
 
 
-📊 Roadmap
+####📊 Roadmap
 
 Versão 1.0.0 (Atual)
 
@@ -475,7 +475,7 @@ Versão 2.0.0 (Planejado)
 
 ⏳ Multi-tenant
 
-❓ FAQ
+####❓ FAQ
 
 Como posso resetar minha senha?
 
@@ -497,7 +497,7 @@ Como faço upgrade de plano?
 
 Entre em contato com nossa equipe comercial para planos empresariais.
 
-🔗 Links Úteis
+####🔗 Links Úteis
 Documentação Oficial
 
 Suporte Técnico
