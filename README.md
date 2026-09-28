@@ -1,8 +1,23 @@
-# 🚀 CARDOXIS - Gestão Inteligente de Frotas
+<div align="center">
+
+# 🚀 CARDOXIS — Gestão Inteligente de Frotas
 
 ![CARDOXIS Banner](https://cardoxis.com/assets/img/og-image.jpg)
 
-**CARDOXIS** é uma plataforma SaaS (Software as a Service) de gestão de frotas que utiliza Inteligência Artificial para otimizar operações, reduzir custos e aumentar a eficiência. Desenvolvida para empresas que buscam modernizar sua gestão de veículos, documentos e manutenções.
+<br/>
+
+[![PHP Version](https://img.shields.io/badge/PHP-8.0%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![MySQL Version](https://img.shields.io/badge/MySQL-5.7%2B-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)](https://cardoxis.com)
+[![Status](https://img.shields.io/badge/Status-v1.0.0-success?style=for-the-badge)](#-roadmap)
+
+<p align="center">
+  <b>Plataforma SaaS moderna para automação, análise preditiva e otimização de frotas operacionais.</b>
+</p>
+
+[Visitar Website](https://cardoxis.com) • [Reportar Bug](https://github.com/cardoxis/cardoxis/issues) • [Solicitar Feature](https://github.com/cardoxis/cardoxis/issues)
+
+</div>
 
 ---
 
@@ -18,6 +33,8 @@
 - [Fluxo do Sistema](#-fluxo-do-sistema)
 - [Credenciais de Teste](#-credenciais-de-teste)
 - [Segurança](#-segurança)
+- [Roadmap](#-roadmap)
+- [FAQ](#-faq)
 - [Contribuição](#-contribuição)
 - [Licença](#-licença)
 - [Contato](#-contato)
@@ -26,221 +43,168 @@
 
 ## 📖 Sobre o Projeto
 
-O CARDOXIS nasceu da necessidade de simplificar a gestão de frotas veiculares, um processo que tradicionalmente é complexo e burocrático. Nossa plataforma combina:
+O **CARDOXIS** nasceu da necessidade de simplificar a gestão de frotas veiculares, transformando um processo tradicionalmente burocrático em uma operação automatizada e orientada a dados.
 
-- **Inteligência Artificial** para análise preditiva e automação
-- **OCR (Reconhecimento Óptico de Caracteres)** para extração automática de dados
-- **Dashboards interativos** para tomada de decisão estratégica
-- **Alertas inteligentes** para prevenção de problemas
+A plataforma combina:
+* 🤖 **Inteligência Artificial:** Análise preditiva e automação de processos.
+* 📄 **OCR Avançado:** Extração automática de dados de documentos e faturas.
+* 📊 **Dashboards Interativos:** Indicadores em tempo real para tomadas de decisão rápidas.
+* 🔔 **Alertas Inteligentes:** Prevenção proativa de vencimentos e manutenções.
 
-### 🎯 **Objetivo**
-Capacitar empresas a gerenciar sua frota de forma inteligente, reduzindo custos operacionais em até 40% e aumentando a eficiência em 60%.
+### 🎯 Objetivo
+Capacitar empresas a gerenciar suas frotas de forma inteligente, reduzindo **custos operacionais em até 40%** e aumentando a **eficiência em 60%**.
 
 ---
 
 ## ✨ Funcionalidades
 
-### 🔐 **Autenticação e Segurança**
-- ✅ Registro de usuários com validação de senha forte
-- ✅ Login seguro com proteção CSRF
-- ✅ "Remember Me" (manter sessão)
-- ✅ Recuperação de senha (em desenvolvimento)
-- ✅ Sessões persistentes com timeout
-- ✅ Proteção contra ataques de força bruta (Rate Limiting)
-
-### 📊 **Dashboard**
-- ✅ Métricas em tempo real (veículos, documentos, manutenções)
-- ✅ Gráficos interativos com Chart.js
-- ✅ Atividades recentes
-- ✅ Alertas de documentos a vencer
-- ✅ Ações rápidas (adicionar veículo, upload, etc.)
-
-### 🚗 **Gestão de Veículos**
-- ✅ Cadastro completo de veículos
-- ✅ Histórico de manutenções
-- ✅ Documentos associados
-- ✅ Status de cada veículo
-
-### 📄 **Gestão de Documentos**
-- ✅ Upload com OCR e IA
-- ✅ Alertas de vencimento
-- ✅ Categorização automática
-- ✅ Visualização e download
-
-### 🔧 **Manutenção**
-- ✅ Agendamento de serviços
-- ✅ Histórico de manutenções
-- ✅ Alertas preventivos
-- ✅ Controle de custos
-
-### 📈 **Relatórios**
-- ✅ Relatórios personalizáveis
-- ✅ Exportação em CSV/PDF
-- ✅ Análise de custos
-
-### 📱 **Responsividade**
-- ✅ Totalmente responsivo (Desktop, Tablet, Mobile)
-- ✅ Menu hamburger para dispositivos móveis
-- ✅ Dark mode automático
+| Módulo | Recursos Principais |
+| :--- | :--- |
+| **🔐 Autenticação & Segurança** | • Validação de senhas fortes<br>• Login com proteção CSRF e Rate Limiting<br>• Sessões persistentes e "Remember Me"<br>• Proteção contra brute-force |
+| **📊 Dashboard** | • Indicadores de desempenho em tempo real<br>• Gráficos interativos (Chart.js)<br>• Feed de atividades recentes<br>• Alertas preventivos e atalhos rápidos |
+| **🚗 Gestão de Veículos** | • Cadastro e histórico detalhado<br>• Vínculo com manutenções e documentos<br>• Controle de status em tempo real |
+| **📄 Gestão de Documentos** | • Leitura automática via OCR e IA<br>• Categorização inteligente<br>• Alertas automatizados de vencimento |
+| **🔧 Manutenção** | • Agendamento preventivo e corretivo<br>• Histórico completo de intervenções<br>• Controle e projeção de custos |
+| **📈 Relatórios & Exportação** | • Relatórios personalizáveis<br>• Exportação nativa em CSV e PDF |
+| **📱 Interface & UX** | • Layout 100% responsivo<br>• Dark Mode automático |
 
 ---
 
 ## 🛠 Tecnologias Utilizadas
 
 ### **Backend**
-| Tecnologia | Versão | Descrição |
-|------------|--------|-----------|
-| PHP | 8.0+ | Linguagem principal |
-| MySQL | 5.7+ | Banco de dados relacional |
-| PDO | - | Camada de abstração de banco de dados |
-| Composer | 2.0+ | Gerenciador de dependências |
+| Tecnologia | Versão | Aplicação |
+| :--- | :---: | :--- |
+| **PHP** | `8.0+` | Linguagem principal do servidor |
+| **MySQL** | `5.7+` | Banco de dados relacional |
+| **PDO** | - | Camada de abstração e segurança do banco |
+| **Composer** | `2.0+` | Gerenciamento de dependências PHP |
 
 ### **Frontend**
-| Tecnologia | Versão | Descrição |
-|------------|--------|-----------|
-| HTML5 | - | Estrutura das páginas |
-| CSS3 | - | Estilização e animações |
-| JavaScript | ES6+ | Interatividade |
-| Chart.js | 4.4.0 | Gráficos interativos |
-| Font Awesome | 6.4.0 | Ícones vetoriais |
-| Google Fonts (Inter) | - | Tipografia profissional |
-
-### **Ferramentas de Desenvolvimento**
-- **XAMPP** / **WAMP** / **LAMP** - Ambiente de desenvolvimento
-- **phpMyAdmin** - Gerenciamento do banco de dados
-- **Git** - Controle de versão
+| Tecnologia | Versão | Aplicação |
+| :--- | :---: | :--- |
+| **HTML5 & CSS3** | - | Estrutura semântica e estilização |
+| **JavaScript** | `ES6+` | Lógica do client-side e interatividade |
+| **Chart.js** | `4.4.0` | Visualização gráfica de dados |
+| **Font Awesome** | `6.4.0` | Ícones vetoriais |
+| **Google Fonts** | Inter | Tipografia principal |
 
 ---
 
 ## 🏗 Arquitetura do Sistema
+
+```
 ┌─────────────────────────────────────────────────────────────┐
 │ USER INTERFACE (UI)                                         │
-│ Landing Page → Login → Dashboard → Sistema                  │
+│ Landing Page → Login → Dashboard → Módulos do Sistema       │
 └─────────────────────────┬───────────────────────────────────┘
                           │
 ┌─────────────────────────▼───────────────────────────────────┐
 │ APPLICATION LAYER                                           │
-│ PHP Controllers (index.php, login.php, register.php,        │
-│ dashboard.php, logout.php)                                  │
+│ PHP Controllers (index, login, register, dashboard, logout) │
 └─────────────────────────┬───────────────────────────────────┘
                           │
 ┌─────────────────────────▼───────────────────────────────────┐
 │ BUSINESS LAYER                                              │
-│ User Model, Security Core, Database Class                   │
+│ User Model, Security Core, Database Engine                  │
 └─────────────────────────┬───────────────────────────────────┘
                           │
 ┌─────────────────────────▼───────────────────────────────────┐
 │ DATA LAYER (MySQL)                                          │
 │ users, vehicles, documents, maintenance, sessions           │
 └─────────────────────────────────────────────────────────────┘
-
-
-text
-### **Fluxo de Dados**
-1. O usuário acessa a Landing Page (`/`)
-2. Faz login (`/login`) ou registra (`/register`)
-3. Após autenticação, é redirecionado para o Dashboard (`/dashboard`)
-4. As ações no dashboard interagem com o banco de dados via Models
-5. Os dados são exibidos em tempo real nas views
+```
 
 ---
 
 ## 💻 Instalação e Configuração
 
 ### **Pré-requisitos**
-
-- PHP 8.0 ou superior
-- MySQL 5.7 ou superior
-- Servidor Web (Apache/Nginx)
-- Composer (opcional)
+* PHP >= 8.0
+* MySQL >= 5.7
+* Servidor Web (Apache/Nginx)
+* Composer (Opcional)
 
 ### **Passos para Instalação**
 
-#### 1. Clone o repositório
+1. **Clonar o repositório:**
+   ```bash
+   git clone https://github.com/cardoxis/cardoxis.git
+   cd cardoxis
+   ```
 
+2. **Configurar as Variáveis de Ambiente:**
+   ```bash
+   cp .env.example .env
+   ```
+   Ajuste as configurações no seu arquivo `.env`:
+   ```env
+   # Database Configuration
+   DB_HOST=localhost
+   DB_PORT=3306
+   DB_NAME=cardoxis_db
+   DB_USER=root
+   DB_PASSWORD=your_password
+
+   # Application Configuration
+   APP_NAME=CARDOXIS
+   APP_ENV=development
+   APP_DEBUG=true
+   APP_URL=http://localhost/cardoxis
+
+   # Security
+   SECURITY_KEY=your_security_key
+   ```
+
+3. **Configuração do Servidor Web:**
+
+   * **Apache (`.htaccess`):**
+     ```apache
+     <IfModule mod_rewrite.c>
+         RewriteEngine On
+         RewriteRule ^$ public/index.php [L]
+         RewriteCond %{REQUEST_FILENAME} !-f
+         RewriteCond %{REQUEST_FILENAME} !-d
+         RewriteRule ^(.*)$ public/index.php [QSA,L]
+     </IfModule>
+     ```
+
+   * **Nginx (`nginx.conf`):**
+     ```nginx
+     location / {
+         try_files $uri $uri/ /index.php?$query_string;
+     }
+     ```
+
+4. **Permissões de Diretório (Linux/macOS):**
+   ```bash
+   sudo chown -R www-data:www-data /var/www/html/cardoxis
+   sudo chmod -R 755 /var/www/html/cardoxis/storage
+   ```
+
+---
+
+## 🗄 Configuração do Banco de Dados
+
+### **Opção 1: Via Linha de Comando (CLI)**
 ```bash
-git clone https://github.com/cardoxis/cardoxis.git
-cd cardoxis
-2. Configure o ambiente
-Copie o arquivo de configuração de exemplo:
-```
-```bash
-cp .env.example .env
-Edite o arquivo .env com suas configurações:
-```
-env
-# Database Configuration
-DB_HOST=localhost
-DB_PORT=3306
-DB_NAME=cardoxis_db
-DB_USER=root
-DB_PASSWORD=
-
-# Application Configuration
-APP_NAME=CARDOXIS
-APP_ENV=development
-APP_DEBUG=true
-APP_URL=http://localhost/cardoxis
-
-# Security
-SECURITY_KEY=your_security_key
-3. Configure o servidor web
-Apache (.htaccess):
-
-apache
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteRule ^$ public/index.php [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ public/index.php [QSA,L]
-</IfModule>
-Nginx (nginx.conf):
-
-nginx
-location / {
-    try_files $uri $uri/ /index.php?$query_string;
-}
-4. Execute no servidor
-XAMPP/WAMP:
-
-text
-Copie a pasta cardoxis para C:\xampp\htdocs\cardoxis
-Linux/Mac:
-
-bash
-sudo cp -r cardoxis /var/www/html/
-sudo chown -R www-data:www-data /var/www/html/cardoxis
-sudo chmod -R 755 /var/www/html/cardoxis/storage
-🗄 Configuração do Banco de Dados
-Opção 1: Usando phpMyAdmin
-Acesse http://localhost/phpmyadmin
-
-Crie um novo banco de dados: cardoxis_db
-
-Selecione o banco de dados criado
-
-Vá em "Importar" e selecione o arquivo database.sql
-
-Clique em "Executar"
-
-Opção 2: Usando linha de comando
-bash
-# Acesse o MySQL
+# Acessar o MySQL
 mysql -u root -p
 
-# Crie o banco de dados
+# Criar banco e importar schema
 CREATE DATABASE cardoxis_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-# Use o banco
 USE cardoxis_db;
-
-# Execute o script SQL
 SOURCE /caminho/para/cardoxis/database.sql;
-Opção 3: Script automático
-Crie um arquivo setup.php:
+```
 
-php
+### **Opção 2: Via phpMyAdmin**
+1. Acesse `http://localhost/phpmyadmin`
+2. Crie a base de dados `cardoxis_db`.
+3. Vá na aba **Importar**, selecione o arquivo `database.sql` e execute.
+
+### **Opção 3: Script de Instalação Automática**
+Crie e execute temporariamente o arquivo `setup.php`:
+```php
 <?php
 require_once 'app/core/Database.php';
 
@@ -248,264 +212,170 @@ try {
     $db = Database::getInstance()->getConnection();
     $sql = file_get_contents('database.sql');
     $db->exec($sql);
-    echo "Banco de dados criado com sucesso!";
+    echo "✅ Banco de dados configurado com sucesso!";
 } catch (Exception $e) {
-    echo "Erro: " . $e->getMessage();
+    echo "❌ Erro ao configurar banco: " . $e->getMessage();
 }
-##📁 Estrutura de Diretórios
-text
+```
+
+---
+
+## 📁 Estrutura de Diretórios
+
+```text
 cardoxis/
-├── .htaccess                      # Configuração de rotas Apache
-├── README.md                      # Documentação do projeto
-├── database.sql                   # Script SQL do banco de dados
+├── .htaccess                      # Reescreve rotas para o Apache
+├── README.md                      # Documentação oficial
+├── database.sql                   # Schema e dados iniciais do banco
 │
-├── public/                        # Diretório público (acessível)
+├── public/                        # Raiz pública do servidor
 │   ├── index.php                  # Landing Page
-│   ├── login.php                  # Página de Login
-│   ├── register.php               # Página de Registro
-│   ├── dashboard.php              # Dashboard
-│   ├── logout.php                 # Logout
-│   │
-│   └── assets/                    # Recursos estáticos
+│   ├── login.php                  # Autenticação de usuários
+│   ├── register.php               # Cadastro de contas
+│   ├── dashboard.php              # Painel principal
+│   ├── logout.php                 # Encerramento de sessão
+│   └── assets/                    # Recurso estáticos públicos
 │       ├── css/
-│       │   ├── style.css          # Landing Page
-│       │   ├── auth.css           # Login/Register
-│       │   └── dashboard.css      # Dashboard
 │       ├── js/
-│       │   ├── app.js             # Landing Page
-│       │   ├── auth.js            # Login/Register
-│       │   └── dashboard.js       # Dashboard
-│       └── img/                   # Imagens
+│       └── img/
 │
-├── views/                         # Views do sistema
-│   ├── layout/
-│   │   └── header.php             # Header global
-│   └── dashboard/
-│       ├── sidebar.php            # Menu lateral
-│       ├── header.php             # Header do dashboard
-│       ├── stats.php              # Cards de estatísticas
-│       ├── quick-actions.php      # Ações rápidas
-│       ├── charts.php             # Gráficos
-│       ├── activities.php         # Atividades recentes
-│       ├── maintenance.php        # Manutenções
-│       ├── documents.php          # Documentos
-│       └── footer.php             # Footer do dashboard
+├── views/                         # Camada de Visualização (Templates)
+│   ├── layout/                    # Layouts globais
+│   └── dashboard/                 # Componentes do Dashboard
 │
-├── app/                           # Código principal (não acessível)
-│   ├── core/
-│   │   ├── Database.php           # Conexão com banco de dados
-│   │   └── Security.php           # Funções de segurança
-│   └── models/
-│       └── User.php               # Modelo de usuário
+├── app/                           # Lógica de Aplicação (Protegida)
+│   ├── core/                      # Classes base (Database, Security)
+│   └── models/                    # Modelos de dados (User, Vehicle, etc.)
 │
-└── storage/                       # Arquivos privados
-    ├── logs/                      # Logs de erro
-    ├── cache/                     # Cache
-    └── uploads/                   # Uploads de documentos
-        └── temp/                  # Arquivos temporários
+└── storage/                       # Arquivos privados do sistema
+    ├── logs/                      # Registro de erros e eventos
+    ├── cache/                     # Cache de performance
+    └── uploads/                   # Uploads seguros
+```
+
+---
+
+## 🔄 Fluxo do Sistema
+
+### **Rotas Principais**
+
+| Rota | Descrição | Autenticação Requerida |
+| :--- | :--- | :---: |
+| `/` | Landing Page informativa | ❌ |
+| `/register` | Cadastro de nova conta | ❌ |
+| `/login` | Acesso à plataforma | ❌ |
+| `/dashboard` | Painel de controle e métricas | ✅ |
+| `/vehicles` | Gestão da frota veicular | ✅ |
+| `/documents` | Processamento de documentos via IA | ✅ |
+| `/maintenance`| Agendamento e custos de manutenção | ✅ |
+| `/reports` | Relatórios e exportação de dados | ✅ |
+| `/settings` | Configurações de perfil e sistema | ✅ |
+| `/logout` | Encerramento seguro da sessão | ✅ |
 
-        
-####🔄 Fluxo do Sistema
+---
 
+## 🔑 Credenciais de Teste
 
+| Perfil | E-mail | Senha | Nível de Acesso |
+| :--- | :--- | :--- | :--- |
+| **Administrador** | `admin@cardoxis.com` | `Admin@123` | Acesso Total |
+| **Usuário Demo** | `demo@cardoxis.com` | `Demo@123` | Leitura e Operação |
 
-| Rota          | Descrição                              | Autenticação |
-|---------------|-----------                             |--------------|
-| `/`           | Landing Page - Apresentação do sistema |    ❌        |
-| `/register`   | Criar nova conta gratuita              |    ❌        |
-| `/login`      | Entrar no sistema                      |    ❌        |
-| `/dashboard`  | Painel principal com métricas          |    ✅        |
-| `/vehicles`   | Gerenciar veículos da frota            |    ✅        |
-| `/documents`  | Gerenciar documentos com IA/OCR        |    ✅        |
-| `/maintenance`| Agendar e controlar manutenções        |    ✅        |
-| `/reports`    | Visualizar relatórios e análises       |    ✅        |
-| `/settings`   | Configurações da conta                 |    ✅        |
-| `/logout`     | Sair do sistema                        |    ✅        |
+---
 
+## 🔒 Segurança
 
+O CARDOXIS foi projetado com foco em boas práticas de segurança cibernética:
 
+* ✅ **CSRF Protection:** Tokens únicos para validação de formulários.
+* ✅ **Criptografia de Senhas:** Hashing via Bcrypt com custo 12.
+* ✅ **Rate Limiting:** Bloqueio temporário após 5 tentativas de login com erro.
+* ✅ **Session Hardening:** Cookies configurados como `HttpOnly`, `SameSite` e `Secure`.
+* ✅ **Prevenção SQLi & XSS:** Consultas preparadas (PDO) e higienização estrita de inputs.
 
+> **💡 Recomendações para Ambientes de Produção:**
+> - Forçar conexões HTTPS/TLS.
+> - Configurar Web Application Firewall (WAF).
+> - Configurar rotinas diárias de backup para a base de dados.
 
-Fluxo de Autenticação
-Usuário não autenticado → Landing Page (/)
+---
 
-Cria conta → Registro (/register)
+## 📊 Roadmap
 
-Faz login → Login (/login)
+- [x] **v1.0.0 (Atual)**
+  - Auth completo, Dashboard com Chart.js, Módulos de Veículos, Documentos e Manutenções.
+- [ ] **v1.1.0 (Em Desenvolvimento)**
+  - RESTful API para integrações de terceiros.
+  - Aplicativo Mobile nativo em React Native.
+  - Integração com Google Maps para geolocalização.
+- [ ] **v2.0.0 (Planejado)**
+  - Módulo de Machine Learning para manutenção preditiva.
+  - Telemetria e integração IoT com sensores veiculares.
 
-Autenticado → Dashboard (/dashboard)
+---
 
-Sai do sistema → Logout (/logout) → Landing Page
+## ❓ FAQ
 
-🔑 Credenciais de Teste
-Administrador
-Campo	Valor
-Email	admin@cardoxis.com
-Senha	Admin@123
-Role	Administrador
-Usuário Demo
-Campo	Valor
-Email	demo@cardoxis.com
-Senha	Demo@123
-Role	Usuário
-🔒 Segurança
-Implementado
-✅ CSRF Protection - Tokens anti-falsificação
+<details>
+<summary><b> O sistema é totalmente compatível com dispositivos móveis?</b></summary>
+<br/>
+Sim! A interface é 100% adaptativa e otimizada para smartphones, tablets e desktops.
+</details>
 
-✅ Password Hashing - Bcrypt com custo 12
+<details>
+<summary><b> Como funciona a exportação de dados?</b></summary>
+<br/>
+Dentro do módulo de relatórios, você pode filtrar os dados desejados e baixá-los instantaneamente nos formatos CSV ou PDF.
+</details>
 
-✅ Rate Limiting - 5 tentativas em 5 minutos
+<details>
+<summary><b> Posso utilizar o projeto para fins comerciais?</b></summary>
+<br/>
+O código-fonte é proprietário. Consulte a seção de Licença para maiores informações sobre contratos comerciais.
+</details>
 
-✅ Session Security - Cookies seguros, HttpOnly
+---
 
-✅ Input Sanitization - Prevenção XSS
+## 🤝 Contribuição
 
-✅ Prepared Statements - Prevenção SQL Injection
+Contribuições para o desenvolvimento do projeto são muito bem-vindas!
 
-✅ Security Headers - X-Frame-Options, XSS-Protection
+1. Faça o **Fork** do projeto
+2. Crie uma Branch para sua Feature:
+   ```bash
+   git checkout -b feature/minha-nova-feature
+   ```
+3. Faça o **Commit** das alterações (sigamos o padrão PSR-12):
+   ```bash
+   git commit -m 'feat: adiciona nova funcionalidade de relatórios'
+   ```
+4. Envie as alterações para o repositório remoto:
+   ```bash
+   git push origin feature/minha-nova-feature
+   ```
+5. Abra um **Pull Request** para análise.
 
-✅ HTTPS Ready - Cookies com flag Secure
+---
 
-Recomendações para Produção
-🔐 HTTPS obrigatório (SSL/TLS)
+## 📄 Licença
 
-🔐 Configurar firewall no servidor
+Direitos autorais reservados © CARDOXIS.
 
-🔐 Limitar acessos por IP (se necessário)
+* ❌ Proibida reprodução comercial sem expressa autorização.
+* ❌ Proibida redistribuição do código-fonte original.
+* ✅ Permitido uso educacional e de testes acadêmicos com devida atribuição.
 
-🔐 Monitoramento de logs em tempo real
+Para licenciamento corporativo ou comercial, solicite atendimento via contato.
 
-🔐 Backups automáticos do banco de dados
+---
 
-🔐 Atualização regular de dependências
+## 📞 Contato
 
-🔐 2FA (Two-Factor Authentication) - em desenvolvimento
+<div align="left">
 
-🤝 Contribuição
-Contribuições são bem-vindas! Siga os passos abaixo:
+* 🌐 **Website:** [cardoxis.com](https://cardoxis.com)
+* 📧 **E-mail:** [contato@cardoxis.com](mailto:contato@cardoxis.com)
+* 📱 **WhatsApp:** [+351 900 000 000](https://wa.me/351900000000)
+* 📍 **Localização:** Portugal 🇵🇹
 
-Fork o projeto
-
-Crie uma branch para sua feature:
-
-bash
-git checkout -b feature/nova-feature
-Commit suas mudanças:
-
-bash
-git commit -m 'Adiciona nova feature'
-Push para a branch:
-
-bash
-git push origin feature/nova-feature
-Abra um Pull Request
-
-Padrões de Código
-Seguir PSR-12 para PHP
-
-Utilizar camelCase para JavaScript
-
-Utilizar kebab-case para CSS classes
-
-Comentar código complexo
-
-Escrever mensagens de commit descritivas
-
-📄 Licença
-Este projeto é propriedade exclusiva da CARDOXIS. Todos os direitos reservados.
-
-Termos de Uso:
-
-❌ Não é permitido uso comercial sem autorização
-
-❌ Não é permitida distribuição do código fonte
-
-❌ Não é permitida cópia ou reprodução do design
-
-✅ Uso educacional permitido (com atribuição)
-
-Para licenciamento comercial, entre em contato.
-
-####📞 Contato
-CARDOXIS
-
-🌐 Website: https://cardoxis.com
-
-📧 Email: contato@cardoxis.com
-
-📱 WhatsApp: +351 900 000 000
-
-📍 Localização: Portugal 🇵🇹
-
-
-
-####📊 Roadmap
-
-Versão 1.0.0 (Atual)
-
-✅ Sistema de autenticação completo
-
-✅ Dashboard com métricas
-
-✅ Gestão de veículos
-
-✅ Gestão de documentos
-
-✅ Gestão de manutenções
-
-✅ Responsividade total
-
-Versão 1.1.0 (Em desenvolvimento)
-
-⏳ API RESTful
-
-⏳ App Mobile (React Native)
-
-⏳ Integração com Google Maps
-
-⏳ OCR Avançado com IA
-
-Versão 2.0.0 (Planejado)
-
-⏳ Machine Learning preditivo
-
-⏳ IoT integração com sensores
-
-⏳ Dashboard personalizável
-
-⏳ Multi-tenant
-
-####❓ FAQ
-
-Como posso resetar minha senha?
-
-Atualmente em desenvolvimento. Envie um email para suporte@cardoxis.com
-
-O sistema é compatível com mobile?
-
-Sim! Totalmente responsivo e adaptado para smartphones e tablets.
-
-Os dados são seguros?
-
-Sim. Utilizamos criptografia de ponta a ponta e seguimos as melhores práticas de segurança.
-
-Posso exportar os dados do meu dashboard?
-
-Sim. Os relatórios podem ser exportados em CSV e PDF.
-
-Como faço upgrade de plano?
-
-Entre em contato com nossa equipe comercial para planos empresariais.
-
-####🔗 Links Úteis
-Documentação Oficial
-
-Suporte Técnico
-
-Status do Sistema
-
-Blog
-
-
-
-CARDOXIS - Gestão Inteligente de Frotas
+</div>
