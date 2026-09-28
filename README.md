@@ -134,7 +134,7 @@ Capacitar empresas a gerenciar sua frota de forma inteligente, reduzindo custos 
 │ users, vehicles, documents, maintenance, sessions           │
 └─────────────────────────────────────────────────────────────┘
 
-text
+
 
 ### **Fluxo de Dados**
 1. O usuário acessa a Landing Page (`/`)
