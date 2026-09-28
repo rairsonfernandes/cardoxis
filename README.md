@@ -2,7 +2,14 @@
 
 # 🚀 CARDOXIS — Gestão Inteligente de Frotas
 
-![CARDOXIS Banner](https://cardoxis.ct.ws/public/assets/img/logo/favicon.png)
+<p align="center">
+  <img
+    src="https://cardoxis.ct.ws/public/assets/img/logo/favicon.png"
+    alt="CARDOXIS"
+    width="120"
+  >
+</p>
+
 
 <br/>
 
@@ -369,10 +376,9 @@ Para licenciamento corporativo ou comercial, solicite atendimento via contato.
 
 ---
 
-## 📞 Contato
-<div align="left">
+## ## 📞 Contato
 
-🌐 cardoxis.ct.ws
-📞 cardoxis.ct.ws/contact
+[![Website](https://img.shields.io/badge/Website-cardoxis.ct.ws-2563EB?style=for-the-badge&logo=googlechrome&logoColor=white)](https://cardoxis.ct.ws)
 
-</div>
+[![Contato](https://img.shields.io/badge/Contato-cardoxis.ct.ws%2Fcontact-16A34A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://cardoxis.ct.ws/contact)
+
