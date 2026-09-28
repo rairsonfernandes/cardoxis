@@ -135,7 +135,7 @@ Capacitar empresas a gerenciar sua frota de forma inteligente, reduzindo custos 
 └─────────────────────────────────────────────────────────────┘
 
 
-
+text
 ### **Fluxo de Dados**
 1. O usuário acessa a Landing Page (`/`)
 2. Faz login (`/login`) ou registra (`/register`)
